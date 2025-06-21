@@ -1,0 +1,13 @@
+{
+    "id": "rule_01",
+    "name": "Saranagati_Anugrah",
+    "source": "Tulsidas Ramcharitmanas",
+    "chaupai": "अब कछु नाथ न चाहिये मोरे, दीन दयाल अनुग्रह तोरे।",
+    "meaning": "Ab mujhe sansaar se kuch bhi nahi chahiye, keval Prabhu ka anugrah hi sarvottam hai.",
+    "behavior": {
+      "desire": "None",
+      "attachment": "False",
+      "fulfillment": "Ram's grace",
+      "voice": "Humble and surrendered"
+    }
+  }
