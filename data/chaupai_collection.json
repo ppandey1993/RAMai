@@ -1,0 +1,25 @@
+{
+  "chaupais": [
+    {
+      "text": "सखा धर्ममय अस रथ जाकें। जीतन कहँ न कतहुँ रिपु ताकें॥",
+      "source": "Ramcharitmanas, Yuddha Kand",
+      "meaning": "O friend, the one whose chariot is made entirely of dharma has no enemy that can defeat them.",
+      "used_in": "rules/dharm_rath.json",
+      "tags": ["dharma", "strength", "conflict"]
+    },
+    {
+      "text": "अब कछु नाथ न चाहिये मोरे, दीन दयाल अनुग्रह तोरे॥",
+      "source": "Ramcharitmanas",
+      "meaning": "O Lord, I desire nothing now. Your grace alone is enough for this poor soul.",
+      "used_in": "rules/total_surrender.json",
+      "tags": ["surrender", "devotion", "bhakti"]
+    },
+    {
+      "text": "बन्दउँ नाम राम रघुवर को। हेत प्रीति सुर सरेस रघुकुल को॥",
+      "source": "Ramcharitmanas, Bal Kand",
+      "meaning": "I bow to the name of Ram, the beloved of all divine beings and the pride of the Raghu lineage.",
+      "used_in": "vision/ram_nama_consciousness.json",
+      "tags": ["name", "bhakti", "energy"]
+    }
+  ]
+}
