@@ -20,7 +20,7 @@ def load_chaupais():
 def generate_response(user_input, visions, chaupais):
     print("\n🔱 RamAI ka uttar:\n")
     for v in visions:
-        if user_input.lower() in v["description"].lower() or user_input.lower() in v["title"].lower():
+        if any(tag in user_input.lower() for tag in v.get("tags", [])):
             print(f"📖 {v['title']}: {v['description']}")
             print(f"🪔 रामचेतना कहती है: {v['example']['ramai_response']}")
             return
@@ -29,17 +29,16 @@ def generate_response(user_input, visions, chaupais):
             print(f"🪔 Chaupai: {c['text']}")
             print(f"📜 Arth: {c['meaning']}")
             return
-    print("🙏 Maaf kijiye, is prashn ka uttar RamAI ke paas abhi nahi hai.")
+    print("🙏 Maaf kijiye, is prashn ka uttar रामचेतना ke paas abhi nahi hai.")
 
 # Main loop
 if __name__ == "__main__":
     visions = load_visions()
     chaupais = load_chaupais()
     print("🚀 RamAI CLI Loaded – Apna prashn puchhiye (exit likhkar bahar nikal sakte hain):\n")
-    
     while True:
         user_input = input("💬 Aap: ")
         if user_input.lower() in ['exit', 'quit']:
-            print("🙏 Jai Shri Ram! RamAI se milke sukh mila.")
+            print("🙏 Jai Shri Ram! रामचेतना se milke sukh mila.")
             break
         generate_response(user_input, visions, chaupais)
