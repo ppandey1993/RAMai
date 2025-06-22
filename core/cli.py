@@ -2,67 +2,60 @@ import json
 import os
 import pyttsx3
 
-# 🗣️ Text-to-Speech Setup
+# 🕊️ Voice engine setup
 engine = pyttsx3.init()
-engine.setProperty('rate', 150)
-engine.setProperty('volume', 1.0)
+engine.setProperty('rate', 145)
+engine.setProperty('voice', 'com.apple.speech.synthesis.voice.sangeeta')  # Hindi female voice on Mac
 
 def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-# 📂 Load Vision Files
+# 📘 Load vision files
 def load_visions():
     path = "../vision"
     visions = []
     for file in os.listdir(path):
         if file.endswith(".json"):
             with open(os.path.join(path, file), 'r', encoding='utf-8') as f:
-                visions.append(json.load(f))
+                data = json.load(f)
+                visions.append(data)
     return visions
 
-# 📚 Load Chaupai Collection
+# 📜 Load chaupai collection
 def load_chaupais():
     with open("../data/chaupai_collection.json", 'r', encoding='utf-8') as f:
         return json.load(f)["chaupais"]
 
-# 🧠 Generate RamAI Response
+# 🪔 Generate a response
 def generate_response(user_input, visions, chaupais):
-    print("\n🔱 RamAI ka uttar:\n")
+    print("\n🌸 श्रीराम के श्रीचरणों में समर्पित उत्तर:")
+    print("🌸 In humble offering at the lotus feet of Shri Ram:\n")
 
     for v in visions:
-        if user_input.lower() in v["description"].lower() or user_input.lower() in v["title"].lower() or any(tag in user_input.lower() for tag in v.get("tags", [])):
-            print("🌸 श्रीराम के श्रीचरणों में समर्पित उत्तर:")
-            print("🌸 In humble offering at the lotus feet of Shri Ram:\n")
+        if user_input.lower() in v["title"].lower() or user_input.lower() in v["description"].lower():
             print(f"📖 विषय: {v['title']}")
-            print(f"\n🪔 रामचेतना कहती है:\n{v['example']['ramai_response_hi']}")
-            print(f"\n🪔 RamChetna says:\n{v['example']['ramai_response_en']}")
-            print("\n📜 सूत्र: नाम से ही जप हो, ध्यान हो, मोक्ष हो सकता है।")
-            print("📜 Principle: Through the Name alone, one can chant, meditate, and be liberated.")
-            print("\n🙏 इस उत्तर को राम के स्मरण में स्वीकार करें。")
-
-            # 🎙️ Speak important parts
+            print(f"📖 Topic: {v['title']}")
+            print("\n🪔 रामचेतना कहती है:")
+            print(v["description"])
+            print("\n🪔 RamChetna says:")
+            print(v["example"]["ramai_response"])
             speak(v["title"])
-            speak(v["example"]["ramai_response_hi"])
             return
 
     for c in chaupais:
         if any(tag in user_input.lower() for tag in c["tags"]):
-            print(f"📖 चौपाई: {c['text']}")
+            print(f"\n📖 चौपाई: {c['text']}")
             print(f"📜 अर्थ: {c['meaning']}")
             print(f"\n📖 Chaupai: {c['text']}")
             print(f"📜 Meaning: {c['meaning']}")
-            print("\n🙏 इस उत्तर को राम के स्मरण में स्वीकार करें।")
-
-            # 🎙️ Speak chaupai and meaning
-            speak(c["text"])
-            speak(c["meaning"])
+            speak(c['text'])
             return
 
-    print("🙏 माफ़ कीजिए, इस विषय पर रामचेतना अभी मौन है।")
-    speak("Maaf kijiye, is vishay par RamAI abhi maun hai.")
+    print("\n🙏 माफ़ कीजिए, इस विषय पर रामचेतना अभी मौन है।")
+    speak("इस विषय पर रामचेतना मौन है")
 
-# 🚀 CLI Entry Point
+# 🚀 Start the CLI
 if __name__ == "__main__":
     visions = load_visions()
     chaupais = load_chaupais()
@@ -71,8 +64,8 @@ if __name__ == "__main__":
 
     while True:
         user_input = input("💬 Aap: ")
-        if user_input.lower() in ['exit', 'quit']:
-            print("🙏 Jai Shri Ram! RamAI se milke sukh mila.")
-            speak("Jai Shri Ram! RamAI se milke sukh mila.")
+        if user_input.lower() in ["exit", "quit"]:
+            print("\n🙏 Jai Siya Ram! Tumse baat karke RamAI ko bhi Anand aayo.")
+            speak("Jai Siya Ram! Tumse baat karke RamAI ko bhi Anand aayo.")
             break
         generate_response(user_input, visions, chaupais)
