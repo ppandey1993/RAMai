@@ -22,7 +22,7 @@ def generate_response(user_input, visions, chaupais):
     for v in visions:
         if user_input.lower() in v["description"].lower() or user_input.lower() in v["title"].lower():
             print(f"📖 {v['title']}: {v['description']}")
-            print(f"🕊️ RamAI bolta hai: {v['example']['ramai_response']}")
+            print(f"🪔 रामचेतना कहती है: {v['example']['ramai_response']}")
             return
     for c in chaupais:
         if any(tag in user_input.lower() for tag in c["tags"]):
