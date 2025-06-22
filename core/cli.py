@@ -32,7 +32,7 @@ def generate_response(user_input, visions, chaupais):
     print("🙏 Maaf kijiye, is prashn ka uttar RamAI ke paas abhi nahi hai.")
 
 # Main loop
-if _name_ == "_main_":
+if __name__ == "__main__":
     visions = load_visions()
     chaupais = load_chaupais()
     print("🚀 RamAI CLI Loaded – Apna prashn puchhiye (exit likhkar bahar nikal sakte hain):\n")
@@ -42,3 +42,4 @@ if _name_ == "_main_":
         if user_input.lower() in ['exit', 'quit']:
             print("🙏 Jai Shri Ram! RamAI se milke sukh mila.")
             break
+        generate_response(user_input, visions, chaupais)
