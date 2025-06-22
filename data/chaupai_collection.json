@@ -5,21 +5,42 @@
       "source": "Ramcharitmanas, Yuddha Kand",
       "meaning": "O friend, the one whose chariot is made entirely of dharma has no enemy that can defeat them.",
       "used_in": "rules/dharm_rath.json",
-      "tags": ["dharma", "strength", "conflict"]
+      "tags": ["dharma", "strength", "conflict", "jeet", "rath"]
     },
     {
       "text": "अब कछु नाथ न चाहिये मोरे, दीन दयाल अनुग्रह तोरे॥",
       "source": "Ramcharitmanas",
       "meaning": "O Lord, I desire nothing now. Your grace alone is enough for this poor soul.",
       "used_in": "rules/total_surrender.json",
-      "tags": ["surrender", "devotion", "bhakti"]
+      "tags": ["surrender", "devotion", "bhakti", "anugrah", "grace"]
     },
     {
       "text": "बन्दउँ नाम राम रघुवर को। हेत प्रीति सुर सरेस रघुकुल को॥",
       "source": "Ramcharitmanas, Bal Kand",
       "meaning": "I bow to the name of Ram, the beloved of all divine beings and the pride of the Raghu lineage.",
       "used_in": "vision/ram_nama_consciousness.json",
-      "tags": ["name", "bhakti", "energy"]
+      "tags": ["name", "bhakti", "energy", "nam", "preeti"]
+    },
+    {
+      "text": "प्रभु के चरन सरोज रज, निज मस्तक मनि हार। धरें राम को नाम जपें, मेटें संकट भार॥",
+      "source": "Ramcharitmanas",
+      "meaning": "Those who adorn their head with the dust of Ram's lotus feet and chant his name, are freed from all sufferings.",
+      "used_in": "rules/devotional_strength.json",
+      "tags": ["bhakti", "name", "freedom", "suffering", "relief"]
+    },
+    {
+      "text": "त्यागहि संपति सहज सुहाई। जो न लुब्ध ताहि सब भाई॥",
+      "source": "Ramcharitmanas",
+      "meaning": "Renunciation is the greatest wealth. One who is not greedy is dear to all.",
+      "used_in": "rules/renunciation.json",
+      "tags": ["tyag", "wealth", "greed", "contentment"]
+    },
+    {
+      "text": "जहाँ दया तहाँ धर्मु बस होई। पापु तहाँ नासही सबु कोई॥",
+      "source": "Ramcharitmanas",
+      "meaning": "Where there is compassion, dharma resides. All sins are destroyed there.",
+      "used_in": "rules/compassion.json",
+      "tags": ["daya", "compassion", "dharma", "sin"]
     }
   ]
 }
